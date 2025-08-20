@@ -24,7 +24,7 @@ fprintf('Bandwidth: %.4f [MHz], Frame Duration %.4f [usec] \n', (sps/N * Nc)/1e+
 
 if use_usrp == 1
     %%USRP setting ************************************************
-    bbtrx = basebandTransceiver("My USRP N320",CaptureDataType="double",TransmitRadioGain=TxGain,CaptureRadioGain=RxGain,CaptureAntennas="RF0:RX2",TransmitAntennas="RF0:TX/RX",TransmitCenterFrequency=Fc,CaptureCenterFrequency=Fc);
+    bbtrx = basebandTransceiver("My USRP N320",CaptureDataType="double",TransmitDataType="double",TransmitRadioGain=TxGain,CaptureRadioGain=RxGain,CaptureAntennas="RF0:RX2",TransmitAntennas="RF0:TX/RX",TransmitCenterFrequency=Fc,CaptureCenterFrequency=Fc);
     %%USRP setting ************************************************
     [pre_signal,~] = capture(bbtrx,milliseconds(2)); %Received signal stream from USRP
     %Obtain inband noise
